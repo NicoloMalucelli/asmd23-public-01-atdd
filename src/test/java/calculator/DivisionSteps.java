@@ -10,7 +10,7 @@ public class DivisionSteps {
     private Calculator calculator;
     private ArithmeticException exception;
 
-    @Given("I have a calculator")
+    @Given("I have an integer Calculator")
     public void IHaveACalculator(){
         this.calculator = new Calculator();
     }
@@ -36,14 +36,14 @@ public class DivisionSteps {
     }
 
     @When("I enter one number and zero")
-    public void IEnterOneNumberAndZero(int arg0){
-        this.calculator.enter(arg0);
+    public void IEnterOneNumberAndZero(){
+        this.calculator.enter(6);
         this.calculator.enter(0);
     }
 
     @Then("the Calculator must warn me that division by zero is not possible")
     public void IHaveDivisionByZeroError(){
-        assertEquals(exception, new ArithmeticException("Division by zero is not possible"));
+        assertEquals(ArithmeticException.class, exception.getClass());
     }
 
 }
