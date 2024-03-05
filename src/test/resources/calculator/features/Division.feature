@@ -11,6 +11,10 @@ Feature: Division of two integer numbers
       | Arg0 | Arg1 | Res |
       |  6   |  3   |  2  |
       |  0   |  3   |  0  |
+      |  27  |  3   |  9  |
+      |  27  |  -3  | -9  |
+      |  -27 |  3   | -9  |
+      |  -27 |  -3  |  9  |
 
   Scenario: Divide one number by zero
     When I enter one number and zero
